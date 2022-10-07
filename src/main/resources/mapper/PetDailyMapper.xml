@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qingge.springboot.mapper.PetDailyMapper">
+
+    <select id="findPage" resultType="com.qingge.springboot.VO.PetDailyVO">
+        SELECT distinct pet.name,pet.id as p_id,pet_daily.id,pet_daily.temperature,pet_daily.weight,pet_daily.height,pet_daily.appetite,pet_daily.status
+        FROM pet,pet_daily
+        <where>
+            pet.id = pet_daily.pet_id
+            <if test="name != null and name != ''">
+                and name like concat('%',#{name},'%')
+            </if>
+        </where>
+    </select>
+</mapper>
