@@ -10,7 +10,6 @@ SpringBoot2 + Vue2 + ElementUI + Axios + Hutool + Mysql + Lombok
 
 1. 用户信息管理模块  
    用户信息模块可以对进行添加用户信息、查询用户信息、编辑用户信息、删除用户信息操作，此模块主要说明添加、修改和查询功能。
-   ![1665147978447](C:\Users\ASUS\AppData\Roaming\Typora\typora-user-images\1665147978447.png)
 2. 预约管理模块  
    预约管理模块主要对宠物进行预约就诊，预约列表的查询。  
 3. 宠物管理模块
