@@ -149,6 +149,8 @@ public class UserController {
     public void export(HttpServletResponse response) throws Exception {
         // 从数据库查询出所有的数据
         List<User> list = userService.list();
+        // 不导出明文密码，避免凭据泄露
+        list.forEach(user -> user.setPassword(null));
         // 通过工具类创建writer 写出到磁盘路径
 //        ExcelWriter writer = ExcelUtil.getWriter(filesUploadPath + "/用户信息.xlsx");
         // 在内存操作，写出到浏览器
